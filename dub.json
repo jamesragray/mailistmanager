@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"James Gray"
+	],
+	"copyright": "Copyright © 2024, James Gray",
+	"dependencies": {
+		"vibe-d": "~>0.9"
+	},
+	"description": "A simple vibe.d server application.",
+	"license": "proprietary",
+	"name": "mailistmanger"
+}

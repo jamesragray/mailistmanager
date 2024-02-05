@@ -1,0 +1,17 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/mailistmanger
+mailistmanger.so
+mailistmanger.dylib
+mailistmanger.dll
+mailistmanger.a
+mailistmanger.lib
+mailistmanger-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
+dub.selections.json
