@@ -8,7 +8,7 @@ import std.format;
 import std.process;
 import vibe.vibe;
 
-auto hostName = "localhost:8080";
+auto hostName = "gray.net.za:1234";
 auto emailsFile = "emails.lst";
 string[] emails;
 
@@ -17,8 +17,8 @@ void main() {
 		emails = File(emailsFile).byLineCopy.array;
 	}
 	auto settings = new HTTPServerSettings;
-	settings.port = 8080;
-	settings.bindAddresses = ["::1", "127.0.0.1"];
+	settings.port = 1234;
+	settings.bindAddresses = ["::1", "127.0.0.1", "gray.net.za"];
 	auto router = new URLRouter;
 	router.get("/",&hello);
 	router.post("/add",&addEmailHandler);
@@ -60,6 +60,7 @@ auto genUniqueString() {
 void sendEmail(string adr, string msg) {
 	 string cmd = format(`
 	 echo "%s" | ./emailer -s "Stellenbosch mathematics mailing list" -f "james@gray.net.za" -t "%s" -r "smtp://gray.net.za"`,msg,adr);
+	 writeln(cmd);
 	executeShell(cmd);
 }
 
